@@ -8,14 +8,21 @@ import javax.inject.Inject
 interface IDataManager {
     @ApplicationContext
     fun getApplicationContext(): Context
+
+    fun getEventBusManager(): IEventBusManager
+
 }
 
 @ApplicationScope
 class DataManager @Inject
-constructor(@ApplicationContext val mApplicationContext: Context) : IDataManager {
-
+constructor(@ApplicationContext val mApplicationContext: Context, val mEventBusManager: EventBusManager) :
+    IDataManager {
 
     override fun getApplicationContext(): Context {
         return mApplicationContext
+    }
+
+    override fun getEventBusManager(): IEventBusManager {
+        return mEventBusManager
     }
 }

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.android.slatestudio.test.App;
 import com.android.slatestudio.test.data.IDataManager;
+import com.android.slatestudio.test.data.IEventBusManager;
 import com.android.slatestudio.test.di.module.ApplicationModule;
 import com.android.slatestudio.test.di.module.DataManagerModule;
 import com.android.slatestudio.test.di.qualifiers.ApplicationContext;
@@ -25,6 +26,8 @@ public interface ApplicationComponent {
     Application application();
 
     IDataManager getDataManager();
+
+    IEventBusManager getEventBusManager();
 
     @Component.Builder
     interface Builder {
