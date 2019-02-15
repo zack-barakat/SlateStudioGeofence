@@ -7,7 +7,7 @@ import java.util.*
 @Parcelize
 data class GeofenceModel(
     val id: String = UUID.randomUUID().toString(),
-    val lat: Double,
-    val lng: Double,
-    val radius: Double
+    var lat: Double,
+    var lng: Double,
+    var radius: Double
 ) : Parcelable

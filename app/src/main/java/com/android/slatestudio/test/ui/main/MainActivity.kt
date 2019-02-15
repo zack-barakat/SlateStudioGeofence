@@ -18,6 +18,7 @@ import com.android.slatestudio.test.R
 import com.android.slatestudio.test.data.model.GeofenceModel
 import com.android.slatestudio.test.ui.base.BaseMvpActivity
 import com.android.slatestudio.test.ui.base.BasePresenter
+import com.android.slatestudio.test.ui.creategeofence.CreateGeofenceActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
@@ -70,7 +71,9 @@ class MainActivity : BaseMvpActivity(), MainContracts.View, OnMapReadyCallback {
     }
 
     override fun openCreateGeofenceScreen() {
-
+        mMap?.let { map ->
+            CreateGeofenceActivity.startActivity(this, map.cameraPosition.target, map.cameraPosition.zoom)
+        }
     }
 
     override fun showUserCurrentLocation() {

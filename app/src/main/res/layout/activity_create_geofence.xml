@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <ImageView
+                android:id="@+id/ivMarker"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/ic_place_32dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/common_ui_padding">
+
+        <TextView
+                android:id="@+id/tvSelectLocationLabel"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_ui_padding_small"
+                android:layout_marginBottom="@dimen/common_ui_padding_small"
+                android:text="@string/text_create_geofence_select_location"
+                android:textColor="@android:color/black"/>
+
+        <Button
+                android:id="@+id/btnSelectLocation"
+                style="@style/AccentButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_medium"
+                android:layout_marginBottom="@dimen/common_ui_padding_small"
+                android:text="@string/text_select_location"/>
+
+        <SeekBar
+                android:id="@+id/sbRadiusBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="1"/>
+
+        <TextView
+                android:id="@+id/tvRadiusDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|bottom"
+                android:layout_marginTop="@dimen/common_ui_padding_small"
+                android:layout_marginBottom="@dimen/common_ui_padding_small"
+                tools:text="2 KM"/>
+
+        <Button
+                android:id="@+id/btnCreateGeofence"
+                style="@style/AccentButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_medium"
+                android:text="@string/text_create_geofence"/>
+    </LinearLayout>
+
+</LinearLayout>
