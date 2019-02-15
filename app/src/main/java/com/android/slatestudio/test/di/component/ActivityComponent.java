@@ -4,6 +4,7 @@ package com.android.slatestudio.test.di.component;
 import com.android.slatestudio.test.di.module.ActivityModule;
 import com.android.slatestudio.test.di.scopes.ActivityScope;
 import com.android.slatestudio.test.ui.base.BaseMvpActivity;
+import com.android.slatestudio.test.ui.main.MainActivity;
 import com.android.slatestudio.test.ui.splash.SplashActivity;
 import dagger.Component;
 
@@ -16,4 +17,5 @@ public interface ActivityComponent {
 
     void inject(SplashActivity activity);
 
+    void inject(MainActivity activity);
 }
