@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Slate Studio</string>
 
+    <string name="google_maps_key" translatable="false">AIzaSyCUB3NlRjOnoIlm31O-nZtUKk4uq6Rm_iU</string>
+
     <string name="title_information">Information</string>
     <string name="message_error_unknown">Something went wrong</string>
     <string name="message_connection_error">Your connection seems lost</string>
