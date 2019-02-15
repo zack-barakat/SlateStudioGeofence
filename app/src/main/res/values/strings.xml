@@ -7,4 +7,19 @@
     <string name="message_error_unknown">Something went wrong</string>
     <string name="message_connection_error">Your connection seems lost</string>
     <string name="message_connect_internet">Connect to the internet</string>
+
+    <string name="text_current_status">Current Status:</string>
+    <string name="text_add_geofence">Add new geofenceModel</string>
+
+    <string name="geofence_unknown_error">Unknown error: the Geofence service is not available now.</string>
+    <string name="geofence_not_available">Geofence service is not available now. Go to Settings>Location>Mode and choose
+        High accuracy.
+    </string>
+    <string name="geofence_too_many_geofences">Your app has registered too many geofences.</string>
+    <string name="geofence_too_many_pending_intents">You have provided too many PendingIntents to the addGeofences()
+        call.
+    </string>
+    <string name="geofence_transition_invalid_type">Invalid geofenceModel transition</string>
+    <string name="text_inside">Inside</string>
+    <string name="text_outside">Outside</string>
 </resources>
