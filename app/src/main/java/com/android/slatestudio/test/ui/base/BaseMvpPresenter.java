@@ -3,6 +3,7 @@ package com.android.slatestudio.test.ui.base;
 import android.content.Context;
 import com.android.slatestudio.test.data.IDataManager;
 import com.android.slatestudio.test.data.IEventBusManager;
+import com.android.slatestudio.test.data.repositories.IGeofenceRepository;
 import com.android.slatestudio.test.di.qualifiers.ApplicationContext;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
@@ -17,6 +18,7 @@ public abstract class BaseMvpPresenter<V extends BaseView> implements BasePresen
     protected final Context mAppContext;
     protected IDataManager mDataManager;
     protected final IEventBusManager mEventBusManager;
+    protected final IGeofenceRepository mGeofenceRepository;
     protected CompositeDisposable disposableSubscription = new CompositeDisposable();
     WeakReference<V> mViewWeak;
 
@@ -27,6 +29,7 @@ public abstract class BaseMvpPresenter<V extends BaseView> implements BasePresen
         mDataManager = dataManager;
         this.mAppContext = mDataManager.getApplicationContext();
         this.mEventBusManager = mDataManager.getEventBusManager();
+        this.mGeofenceRepository = mDataManager.getGeofenceRepository();
     }
 
     @Override

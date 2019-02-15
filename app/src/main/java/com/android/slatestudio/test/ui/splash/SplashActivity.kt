@@ -4,6 +4,9 @@ import android.os.Bundle
 import com.android.slatestudio.test.R
 import com.android.slatestudio.test.ui.base.BaseMvpActivity
 import com.android.slatestudio.test.ui.base.BasePresenter
+import com.android.slatestudio.test.ui.main.MainActivity
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
 import javax.inject.Inject
 
 class SplashActivity : BaseMvpActivity(), SplashContracts.View {
@@ -32,6 +35,6 @@ class SplashActivity : BaseMvpActivity(), SplashContracts.View {
     }
 
     override fun showMainScreen() {
-
+        startActivity(intentFor<MainActivity>().clearTask())
     }
 }

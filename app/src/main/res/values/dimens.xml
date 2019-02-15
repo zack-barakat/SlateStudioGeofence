@@ -5,5 +5,6 @@
     <dimen name="common_ui_padding_small">8dp</dimen>
     <dimen name="common_ui_padding_large">32dp</dimen>
     <dimen name="btn_height_small">40dp</dimen>
+    <dimen name="btn_height_medium">50dp</dimen>
 
 </resources>

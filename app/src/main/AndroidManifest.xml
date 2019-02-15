@@ -27,6 +27,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+                android:name=".ui.main.MainActivity"
+                android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".ui.creategeofence.CreateGeofenceActivity"
+                android:theme="@style/AppTheme"/>
+
         <service android:name=".service.GeofenceTransitionsIntentService"/>
     </application>
 </manifest>
