@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_ui_padding">16dp</dimen>
+    <dimen name="common_ui_padding_extra_small">4dp</dimen>
+    <dimen name="common_ui_padding_small">8dp</dimen>
+    <dimen name="common_ui_padding_large">32dp</dimen>
+    <dimen name="btn_height_small">40dp</dimen>
+
+</resources>

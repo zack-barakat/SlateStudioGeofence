@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/common_ui_padding">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        style="@style/TextStyleDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_ui_padding_large"
+        android:layout_marginTop="@dimen/common_ui_padding"
+        android:layout_marginRight="@dimen/common_ui_padding_large"
+        android:layout_marginBottom="@dimen/common_ui_padding"
+        android:gravity="center"
+        tools:text="Title" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/common_ui_padding"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvDialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/common_ui_padding"
+        android:gravity="center"
+        android:paddingLeft="@dimen/common_ui_padding"
+        android:paddingRight="@dimen/common_ui_padding"
+        android:textSize="16sp"
+        tools:text="Message here" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnDialogPositive"
+        style="@style/AccentRoundedButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height_small"
+        android:layout_marginTop="@dimen/common_ui_padding"
+        android:gravity="center"
+        android:textAllCaps="true"
+        tools:text="Positive" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnDialogNegative"
+        style="@style/AccentRoundedButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height_small"
+        android:layout_marginTop="@dimen/common_ui_padding"
+        android:gravity="center"
+        android:textAllCaps="true"
+        tools:text="Negative" />
+</LinearLayout>
