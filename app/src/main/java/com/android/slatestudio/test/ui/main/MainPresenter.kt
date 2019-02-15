@@ -16,18 +16,36 @@ constructor(dataManager: IDataManager) : BaseMvpPresenter<MainContracts.View>(da
                 view?.showUpdatedStatus(event.transitionType)
             }
         }
+        mGeofenceRepository.getGeofences().forEach { geofence ->
+            mGeofenceRepository.trackGeofenceTransition(geofence)
+        }
     }
 
     override fun onStart() {
-        mGeofenceRepository.getGeofences().forEach { geofence ->
-            view.showGeofence(geofence)
-        }
+        fetchAndShowGeofences()
     }
+
     override fun onAddGeofenceClick() {
         view.openCreateGeofenceScreen()
     }
 
     override fun onMapReady() {
         view.showUserCurrentLocation()
+        fetchAndShowGeofences()
+    }
+
+    override fun onDeleteGeofenceClicked(geofenceId: String) {
+        val geofence = mGeofenceRepository.getGeofence(geofenceId)
+        geofence?.let {
+            mGeofenceRepository.removeGeofence(geofence)
+            view.clearMapObjects()
+            fetchAndShowGeofences()
+        }
+    }
+
+    private fun fetchAndShowGeofences() {
+        mGeofenceRepository.getGeofences().forEach { geofence ->
+            view.showGeofence(geofence)
+        }
     }
 }

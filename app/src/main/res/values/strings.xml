@@ -26,5 +26,8 @@
     <string name="text_create_geofence_select_location">Drag map to select location</string>
     <string name="text_select_location">Select Location</string>
     <string name="text_radius_size">%d KM</string>
+    <string name="dialog_delete_geofence_title">Delete Geofence</string>
+    <string name="dialog_delete_geofence_message">Are you sure you want to delete the selected geofence</string>
+    <string name="delete">Delete</string>
 
 </resources>

@@ -17,11 +17,11 @@ import com.android.slatestudio.test.R
 import com.android.slatestudio.test.di.component.ActivityComponent
 import com.android.slatestudio.test.di.component.DaggerActivityComponent
 import com.android.slatestudio.test.di.module.ActivityModule
+import com.android.slatestudio.test.utils.DialogHelper
 import com.android.slatestudio.test.utils.ResourceUtil
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.okButton
+import javax.inject.Inject
 
 
 abstract class BaseMvpActivity : AppCompatActivity(), BaseView {
@@ -30,6 +30,8 @@ abstract class BaseMvpActivity : AppCompatActivity(), BaseView {
     private var loadingDialog: AlertDialog? = null
     private val disposableSubscription = CompositeDisposable()
 
+    @Inject
+    lateinit var dialogHelper: DialogHelper
 
     val activityComponent: ActivityComponent?
         get() {
@@ -125,9 +127,12 @@ abstract class BaseMvpActivity : AppCompatActivity(), BaseView {
         when (messageStyle) {
             ErrorView.ERROR_DIALOG -> {
                 val title = getString(R.string.title_information)
-                alert(title, message) {
-                    okButton { }
-                }.show()
+                dialogHelper.showAlert(
+                    this,
+                    dialogTitle = title,
+                    dialogMessage = message,
+                    positiveButton = getString(android.R.string.ok)
+                )
             }
             ErrorView.ERROR_TOAST -> Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             else -> {
@@ -140,9 +145,12 @@ abstract class BaseMvpActivity : AppCompatActivity(), BaseView {
         when (messageStyle) {
             ErrorView.ERROR_DIALOG -> {
                 val title = getString(R.string.title_information)
-                alert(title, getString(messageResource)) {
-                    okButton { }
-                }.show()
+                dialogHelper.showAlert(
+                    this,
+                    dialogTitle = title,
+                    dialogMessage = getString(messageResource),
+                    positiveButton = getString(android.R.string.ok)
+                )
             }
             ErrorView.ERROR_TOAST -> Toast.makeText(this, messageResource, Toast.LENGTH_LONG).show()
             else -> {

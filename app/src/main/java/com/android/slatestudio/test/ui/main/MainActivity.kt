@@ -7,6 +7,11 @@ import android.location.Criteria
 import android.location.LocationManager
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import com.android.slatestudio.test.R
+import com.android.slatestudio.test.data.model.GeofenceModel
+import com.android.slatestudio.test.ui.base.BaseMvpActivity
+import com.android.slatestudio.test.ui.base.BasePresenter
+import com.android.slatestudio.test.ui.creategeofence.CreateGeofenceActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -14,11 +19,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.android.slatestudio.test.R
-import com.android.slatestudio.test.data.model.GeofenceModel
-import com.android.slatestudio.test.ui.base.BaseMvpActivity
-import com.android.slatestudio.test.ui.base.BasePresenter
-import com.android.slatestudio.test.ui.creategeofence.CreateGeofenceActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
@@ -99,11 +99,28 @@ class MainActivity : BaseMvpActivity(), MainContracts.View, OnMapReadyCallback {
         )
     }
 
+    override fun clearMapObjects() {
+        mMap?.clear()
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap?.run {
             uiSettings.isMyLocationButtonEnabled = false
             uiSettings.isMapToolbarEnabled = true
+        }
+
+        mMap?.setOnMarkerClickListener { marker ->
+            val markerTag = marker.tag as? String ?: ""
+            dialogHelper.showAlert(this,
+                dialogTitle = getString(R.string.dialog_delete_geofence_title),
+                dialogMessage = getString(R.string.dialog_delete_geofence_message),
+                positiveButton = getString(R.string.delete),
+                onPositiveClick = { mPresenter.onDeleteGeofenceClicked(markerTag) },
+                negativeButton = getString(android.R.string.cancel),
+                onNegativeClick = { dialogHelper.closeDialog() }
+            )
+            return@setOnMarkerClickListener true
         }
 
         mPresenter.onMapReady()

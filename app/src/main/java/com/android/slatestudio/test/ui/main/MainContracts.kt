@@ -15,6 +15,8 @@ interface MainContracts {
         fun showUserCurrentLocation()
 
         fun showGeofence(geofenceModel: GeofenceModel)
+
+        fun clearMapObjects()
     }
 
     interface Presenter<V : View> : BasePresenter<V> {
@@ -24,5 +26,7 @@ interface MainContracts {
         fun onAddGeofenceClick()
 
         fun onMapReady()
+
+        fun onDeleteGeofenceClicked(geofenceId: String)
     }
 }
