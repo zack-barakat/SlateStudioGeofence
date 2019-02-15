@@ -19,6 +19,8 @@ interface MainContracts {
 
     interface Presenter<V : View> : BasePresenter<V> {
 
+        fun onStart()
+
         fun onAddGeofenceClick()
 
         fun onMapReady()

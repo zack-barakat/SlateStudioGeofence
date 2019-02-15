@@ -18,6 +18,11 @@ constructor(dataManager: IDataManager) : BaseMvpPresenter<MainContracts.View>(da
         }
     }
 
+    override fun onStart() {
+        mGeofenceRepository.getGeofences().forEach { geofence ->
+            view.showGeofence(geofence)
+        }
+    }
     override fun onAddGeofenceClick() {
         view.openCreateGeofenceScreen()
     }

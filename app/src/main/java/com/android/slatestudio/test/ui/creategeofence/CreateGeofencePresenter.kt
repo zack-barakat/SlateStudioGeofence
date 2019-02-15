@@ -76,11 +76,10 @@ constructor(dataManager: IDataManager) : BaseMvpPresenter<CreateGeofenceContract
             mGeofencingClient
                 .addGeofences(buildGeofencingRequest(geofence), geofencePendingIntent)
                 .addOnSuccessListener {
+                    mGeofenceRepository.addGeofence(mGeofenceModel)
                     view.showGeofenceAddedSuccessfully()
                 }
                 .addOnFailureListener {
-                    // 4
-//                    failure(GeofenceErrorMessages.getErrorString(context, it))
                 }
 
         }

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.android.slatestudio.test.App;
 import com.android.slatestudio.test.data.IDataManager;
 import com.android.slatestudio.test.data.IEventBusManager;
+import com.android.slatestudio.test.data.repositories.IGeofenceRepository;
 import com.android.slatestudio.test.di.module.ApplicationModule;
 import com.android.slatestudio.test.di.module.DataManagerModule;
 import com.android.slatestudio.test.di.qualifiers.ApplicationContext;
@@ -28,6 +29,8 @@ public interface ApplicationComponent {
     IDataManager getDataManager();
 
     IEventBusManager getEventBusManager();
+
+    IGeofenceRepository getGeofenceRepository();
 
     @Component.Builder
     interface Builder {

@@ -42,6 +42,11 @@ class MainActivity : BaseMvpActivity(), MainContracts.View, OnMapReadyCallback {
         mPresenter.onAttachView(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+        mPresenter.onStart()
+    }
+
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         onRequestPermissionsResult(requestCode, grantResults)
