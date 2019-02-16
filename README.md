@@ -35,3 +35,13 @@ To read more about MVP Architecture you may refer to these links:
 
 #### All presenters have equivalent test presenets to test mvp intercations and ensure logic is done properly
 
+## 5 App UI flow and functionality
+#### There are two screens in the app, Main screen where user can view geofences and check the status whether he is inside or outside of a geofence, and create geofence screen where user can create new geofence screen.
+### Main Screen
+![screenshot_1550294041](https://user-images.githubusercontent.com/13542406/52894925-dd847880-31ec-11e9-8674-7b611ebb41e6.png)
+
+### Create Geofence Screen
+![screenshot_1550294058](https://user-images.githubusercontent.com/13542406/52894926-de1d0f00-31ec-11e9-98de-01f5374af1e7.png)
+
+### To test the the whole flow you can download the apk using this link from bitrise: https://app.bitrise.io/artifact/12046500/p/5b0d31e273f54e06f0e8a94ce3e82adc  
+
