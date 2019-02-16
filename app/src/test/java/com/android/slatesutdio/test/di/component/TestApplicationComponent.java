@@ -11,6 +11,7 @@ import com.android.slatestudio.test.di.qualifiers.ApplicationContext;
 import com.android.slatestudio.test.di.scopes.ApplicationScope;
 import com.android.slatesutdio.test.di.module.TestApplicationModule;
 import com.android.slatesutdio.test.di.module.TestDataManagerModule;
+import com.android.slatesutdio.test.mvp.CreateGeofencePresenterTest;
 import com.android.slatesutdio.test.mvp.MainPresenterTest;
 import com.android.slatesutdio.test.testCase.AppRobolectricTestCase;
 import dagger.BindsInstance;
@@ -30,6 +31,8 @@ public interface TestApplicationComponent extends ApplicationComponent {
     void inject(AppRobolectricTestCase appRobolectricTestCase);
 
     void inject(MainPresenterTest mainPresenterTest);
+
+    void inject(CreateGeofencePresenterTest createGeofencePresenterTest);
 
     @Component.Builder
     interface Builder {

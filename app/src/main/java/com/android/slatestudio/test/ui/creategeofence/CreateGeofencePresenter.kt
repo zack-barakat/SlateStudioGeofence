@@ -1,5 +1,6 @@
 package com.android.slatestudio.test.ui.creategeofence
 
+import android.support.annotation.VisibleForTesting
 import com.android.slatestudio.test.R
 import com.android.slatestudio.test.data.IDataManager
 import com.android.slatestudio.test.data.model.GeofenceModel
@@ -11,7 +12,8 @@ class CreateGeofencePresenter @Inject
 constructor(dataManager: IDataManager) : BaseMvpPresenter<CreateGeofenceContracts.View>(dataManager),
     CreateGeofenceContracts.Presenter<CreateGeofenceContracts.View> {
 
-    private var mGeofenceModel = GeofenceModel(lat = 0.0, lng = 0.0, radius = 2000.0)
+    @VisibleForTesting
+    var mGeofenceModel = GeofenceModel(lat = 0.0, lng = 0.0, radius = 2000.0)
     private lateinit var mExtraLatLng: LatLng
     private var mExtraZoom: Float = 0F
 

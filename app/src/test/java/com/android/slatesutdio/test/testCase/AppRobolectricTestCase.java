@@ -9,22 +9,22 @@ import com.android.slatestudio.test.data.repositories.IGeofenceRepository;
 import com.android.slatesutdio.test.MockApplication;
 import com.android.slatesutdio.test.di.component.TestApplicationComponent;
 import com.android.slatesutdio.test.shadows.ShadowPreferenceManager;
-import com.android.slatesutdio.test.testRunner.AppRobolectricTestRunner;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import javax.inject.Inject;
 
 
-@RunWith(AppRobolectricTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(
         application = MockApplication.class,
         shadows = {ShadowPreferenceManager.class},
-        sdk = AppRobolectricTestRunner.DEFAULT_SDK,
+        sdk = 27,
         manifest = Config.NONE
 )
 public abstract class AppRobolectricTestCase extends TestCase {
